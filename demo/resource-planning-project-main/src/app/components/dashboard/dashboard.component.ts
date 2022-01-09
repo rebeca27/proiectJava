@@ -14,6 +14,7 @@ import {Subject} from 'rxjs';
 export class DashboardComponent implements OnInit {
 
   public currentUser;
+  public currentFaculty;
   public faHistory = faHistory;
   public faCalendarAlt = faCalendarAlt;
   public openHistoryModalSubject: Subject<any> = new Subject<any>();

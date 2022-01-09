@@ -53,12 +53,13 @@ public class UserDao {
 
     @Transactional
     public void updateUser(User user){
-        entityManager.createNativeQuery("INSERT INTO User (nume, prenume, permisiune, mail, parola) VALUES (?,?,?,?,?)")
+        entityManager.createNativeQuery("INSERT INTO User (nume, prenume, permisiune, mail, parola, id_facultate) VALUES (?,?,?,?,?,?)")
                 .setParameter(1, user.getNume())
                 .setParameter(2, user.getPrenume() )
                 .setParameter(3, user.getPermisiune())
                 .setParameter(4, user.getMail())
                 .setParameter(5, user.getParola())
+                .setParameter(6, user.getId_facultate())
                 .executeUpdate();
     }
 }

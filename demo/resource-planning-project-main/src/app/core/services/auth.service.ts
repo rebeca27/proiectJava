@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../models/user.model';
+import {Faculty} from '../models/faculty.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,10 @@ export class AuthService {
 
   public getUser(): any {
     return JSON.parse(localStorage.getItem('appData')).user;
+  }
+
+  public getFaculty(): any {
+    return JSON.parse(localStorage.getItem('appData')).faculty;
   }
 
   public getUserId(): string {

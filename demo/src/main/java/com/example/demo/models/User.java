@@ -20,13 +20,16 @@ public class User {
     String mail;
     @NotNull
     String parola;
+    @NotNull
+    int id_facultate;
 
-    public User(String nume, String prenume, boolean permisiune, String mail, String parola) {
+    public User(String nume, String prenume, boolean permisiune, String mail, String parola, int id_facultate ){
         this.nume = nume;
         this.prenume = prenume;
         this.permisiune = permisiune;
         this.mail = mail;
         this.parola = parola;
+        this.id_facultate = id_facultate;
     }
 
     public User() {
@@ -81,6 +84,14 @@ public class User {
         this.parola = parola;
     }
 
+    public int getId_facultate() {
+        return id_facultate;
+    }
+
+    public void setId_facultate(int id_facultate) {
+        this.id_facultate = id_facultate;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -90,6 +101,7 @@ public class User {
                 ", permisiune=" + permisiune +
                 ", mail='" + mail + '\'' +
                 ", parola='" + parola + '\'' +
+                ", id_facultate='" + id_facultate + '\'' +
                 '}';
     }
 }

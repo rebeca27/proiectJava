@@ -54,8 +54,8 @@ public class MainController {
     }
 
     @PostMapping("/register")
-    public void registerUser(@RequestParam String nume,@RequestParam String prenume, @RequestParam boolean permisiune, @RequestParam String mail, @RequestParam String parola) {
-        User user = new User(nume, prenume, permisiune, mail, parola);
+    public void registerUser(@RequestParam String nume,@RequestParam String prenume, @RequestParam boolean permisiune, @RequestParam String mail, @RequestParam String parola,@RequestParam int id_facultate) {
+        User user = new User(nume, prenume, permisiune, mail, parola,id_facultate);
         userDao.updateUser(user);
     }
 

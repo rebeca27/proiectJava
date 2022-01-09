@@ -44,6 +44,12 @@
             </button>
           </mat-form-field>
 
+          <mat-form-field>
+            <mat-label>Facultate</mat-label>
+            <input formControlName="id_facultate" matInput placeholder="Enter id faculty">
+          </mat-form-field>
+          <br>
+
           <button (click)="registerUser()" [disabled]="form.status == 'INVALID'"
     form              class="btn btn-block btn-light" type="submit">Register
           </button>

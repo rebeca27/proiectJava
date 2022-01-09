@@ -12,9 +12,9 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  public registerUser(nume, prenume, permisiune, mail, parola): Observable<any> {
+  public registerUser(nume, prenume, permisiune, mail, parola, id_facultate): Observable<any> {
     let url = "http://localhost:8080/register";
-    let params = new HttpParams().set("nume", nume).set("prenume", prenume).set("permisiune", permisiune).set("mail", mail).set("parola", parola);
+    let params = new HttpParams().set("nume", nume).set("prenume", prenume).set("permisiune", permisiune).set("mail", mail).set("parola", parola).set("id_facultate", id_facultate);
     return this.http.post<any>(url, {}, {params: params});
   }
 

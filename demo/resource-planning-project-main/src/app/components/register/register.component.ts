@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
       status: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      id_facultate: ['', Validators.required],
     });
   }
 
@@ -47,6 +48,7 @@ export class RegisterComponent implements OnInit {
       this.form.value.status,
       this.form.value.email,
       this.form.value.password,
+      this.form.value.id_facultate,
     )
       .subscribe( (data) => {
         this.snackBar.openSnackBar('Successfully register!', 'success-snackbar');

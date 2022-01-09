@@ -5,4 +5,5 @@ export class User {
   permisiune: number;
   mail: string;
   parola: string;
+  id_facultate: number;
 }
