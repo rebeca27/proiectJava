@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row" style="height: 90vh;">
+    <div class="col-6" style="display: flex; align-items: center;">
+      <div class="auth-wrapper">
+        <form [formGroup]="form" class="form-signin">
+          <div class="welcome-text">
+
+            <div matBadge="15" matBadgeColor="warn" class="welcome-text-title">
+              Welcome,
+              <br>
+              please create a new account.
+            </div>
+          </div>
+          <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstname" matInput placeholder="Enter first name">
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastname" matInput placeholder="Enter last name">
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>Permisiune</mat-label>
+            <input formControlName="status" matInput placeholder="Enter permisiune">
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input formControlName="email" matInput placeholder="Enter e-mail">
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input [type]="hidePassword ? 'password' : 'text'" formControlName="password" matInput
+                   placeholder="Enter password">
+            <button (click)="hidePassword = !hidePassword" mat-icon-button matSuffix>
+              <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <button (click)="registerUser()" [disabled]="form.status == 'INVALID'"
+    form              class="btn btn-block btn-light" type="submit">Register
+          </button>
+        </form>
+
+      </div>
+    </div>
+    <div class="col-6" style="display: flex; align-items: center;">
+      <div>
+        <img class=" login-img" src="/assets/login-img.svg">
+      </div>
+    </div>
+  </div>
+</div>
