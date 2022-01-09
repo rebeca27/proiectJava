@@ -40,8 +40,6 @@ export class RegisterComponent implements OnInit {
   }
 
   public registerUser() {
-    let userExists = false;
-    let currentUser;
     this.userService.
     registerUser(
       this.form.value.firstname,
@@ -51,9 +49,8 @@ export class RegisterComponent implements OnInit {
       this.form.value.password,
     )
       .subscribe( (data) => {
-        console.log(data);
-        userExists = true;
         this.snackBar.openSnackBar('Successfully register!', 'success-snackbar');
+        this.form.reset();
       });
   }
 }
