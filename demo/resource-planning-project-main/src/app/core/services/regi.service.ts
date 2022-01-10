@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../models/user.model';
+import {Faculty} from '../models/faculty.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,40 +12,25 @@ export class RegiService {
   constructor(private http: HttpClient) {
   }
 
-  public signIn(user: User): void {
-    this.addDataToLocalStorage(user);
+  public signIn(user: User, faculty: Faculty): void {
+    this.addDataToLocalStorage(user, faculty);
   }
 
   public logOut(): void {
     localStorage.removeItem('appData');
   }
 
-  public addDataToLocalStorage(user: any, access_token?: any): void {
+  public addDataToLocalStorage(user: any, faculty: any, access_token?: any, ): void {
     const appData = {
       access_token,
       user,
+      faculty,
     };
     localStorage.setItem('appData', JSON.stringify(appData));
   }
 
   public isLoggedIn(): boolean {
     return JSON.parse(localStorage.getItem('appData')) !== null;
-  }
-
-  public getToken(): string {
-    return JSON.parse(localStorage.getItem('appData')).access_token;
-  }
-
-  public getUser(): any {
-    return JSON.parse(localStorage.getItem('appData')).user;
-  }
-
-  public getUserId(): string {
-    const localData = JSON.parse(localStorage.getItem('appData'));
-    if (localData) {
-      return localData.user.id;
-    }
-    return null;
   }
 
 }

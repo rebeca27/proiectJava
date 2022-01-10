@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable, Subscription} from 'rxjs';
 import {AuthService} from 'src/app/core/services/auth.service';
 import {ClassroomService} from 'src/app/core/services/classroom.service';
+import {SnackbarService} from 'src/app/core/services/snackbar.service';
 import {DatePipe} from '@angular/common';
 
 declare const $: any;
@@ -24,6 +25,7 @@ export class BookClassroomModalComponent implements OnInit {
     public formBuilder: FormBuilder,
     private classroomService: ClassroomService,
     private authService: AuthService,
+    private snackBar: SnackbarService,
     public datepipe: DatePipe
   ) {
   }
@@ -62,6 +64,8 @@ export class BookClassroomModalComponent implements OnInit {
         console.log(data);
       });
     this.hideModal();
+
+    this.snackBar.openSnackBar('Successfully reserved!', 'success-snackbar');
   }
 
   public showModal(): void {

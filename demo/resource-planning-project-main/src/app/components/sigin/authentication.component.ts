@@ -13,6 +13,7 @@ export class AuthenticationComponent implements OnInit {
   public signinForm: FormGroup;
   public hidePassword = true;
   private users = [];
+ // private faculties = [];
 
   constructor(
     public fb: FormBuilder,
@@ -25,12 +26,14 @@ export class AuthenticationComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
     this.getUsers();
+   // this.getFaculties();
   }
 
   public initForm(): void {
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+    //  name: ['', Validators.required],
     });
   }
 
@@ -40,9 +43,16 @@ export class AuthenticationComponent implements OnInit {
     });
   }
 
+  // public getFaculties(): void {
+  //   this.authService.getFaculties().subscribe(data => {
+  //     this.faculties = data;
+  //   });
+  // }
+
   public loginUser(): void {
     let userExists = false;
     let currentUser;
+    // let currentFaculty;
 
     this.users.forEach(user => {
       if (
@@ -56,8 +66,17 @@ export class AuthenticationComponent implements OnInit {
       }
     });
 
+    // this.faculties.forEach(faculty => {
+    //   if (
+    //     // tslint:disable-next-line:triple-equals
+    //     this.signinForm.value.name == faculty.name
+    //   ) {
+    //     currentFaculty = faculty;
+    //   }
+    // });
     if (userExists) {
       this.authService.signIn(currentUser);
+     // this.authService.signFac(currentFaculty);
       this.router.navigate(['dashboard']);
       this.snackBar.openSnackBar('Successfully logged in!', 'success-snackbar');
     } else {

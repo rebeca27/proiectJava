@@ -14,7 +14,7 @@ import {Subject} from 'rxjs';
 export class DashboardComponent implements OnInit {
 
   public currentUser;
-  public currentFaculty;
+  public currentFaculty = [] as any;
   public faHistory = faHistory;
   public faCalendarAlt = faCalendarAlt;
   public openHistoryModalSubject: Subject<any> = new Subject<any>();
@@ -33,6 +33,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.setData();
     this.currentUser = this.authService.getUser();
+    this.authService.getFaculty(this.currentUser.id_facultate).subscribe(data => {
+      this.currentFaculty = data || [];
+    });
+
+    this.currentFaculty = this.authService.getFaculty(this.currentUser.id_facultate);
   }
 
   public openHistoryModal(classroomName, id): void {
@@ -45,7 +50,7 @@ export class DashboardComponent implements OnInit {
 
   public doLogout(): void {
     this.authService.logOut();
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
     this.snackBar.openSnackBar('Successfully logged out!', 'success-snackbar');
   }
 

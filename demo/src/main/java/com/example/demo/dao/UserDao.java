@@ -62,4 +62,9 @@ public class UserDao {
                 .setParameter(6, user.getId_facultate())
                 .executeUpdate();
     }
+
+    public List<String> getFaculty(int id){
+      return  entityManager.createQuery("select f.nume from User u, Facultate f where u.id_facultate = f.id and u.id = :id")
+                .setParameter("id", id).getResultList();
+    }
 }

@@ -4,10 +4,12 @@ import com.example.demo.dao.RezervareDao;
 import com.example.demo.dao.SalaDao;
 import com.example.demo.dao.UserDao;
 import com.example.demo.dao.FacultateDao;
+import com.example.demo.models.Facultate;
 import com.example.demo.models.Rezervare;
 import com.example.demo.models.Sala;
 import com.example.demo.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
@@ -38,6 +40,13 @@ public class MainController {
         rezervareDao.updateSalaStatus();
         return salaDao.getAll();
     }
+
+    @GetMapping("/facultate")
+    public List<String> getAllFaculties(@RequestParam("id") int id) {
+        return userDao.getFaculty(id);
+    }
+
+
 
     @RequestMapping("/istoric")
     public List<Rezervare> getRoomHistory(@RequestParam int id) {

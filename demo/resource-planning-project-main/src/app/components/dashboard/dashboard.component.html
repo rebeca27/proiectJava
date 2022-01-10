@@ -13,12 +13,11 @@
       <div class="user-details-name">
         {{ currentUser.nume }} {{ currentUser.prenume }}
       </div>
-<!--      <div class="user-details-name">-->
-<!--        {{ currentUser.facultate }} -->
-<!--      </div>-->
-      <!-- <div class="user-details-email">
-        {{ currentUser.mail }}
-      </div> -->
+
+      <div class="user-details-name">
+         {{currentFaculty[0]}}
+      </div>
+
       <div *ngIf="currentUser.permisiune == 1; else student" class="user-details-email">
         profesor
       </div>
@@ -27,6 +26,7 @@
           student
         </div>
       </ng-template>
+
     </div>
     <div
       (click)="doLogout()"
@@ -40,10 +40,10 @@
     <table class="table table-hover">
       <thead>
       <tr>
-        <th scope="col">Nume</th>
-        <th scope="col">Facultate</th>
+        <th scope="col">Numar</th>
         <th scope="col">Descriere</th>
         <th scope="col">Stare</th>
+        <th scope="col">Istoric</th>
         <th scope="col"></th>
       </tr>
       </thead>
@@ -51,9 +51,6 @@
       <tr>
         <td>
           {{ row.nume }}
-        </td>
-        <td>
-          {{ row.facultate }}
         </td>
         <td>
           {{ row.descriere }}

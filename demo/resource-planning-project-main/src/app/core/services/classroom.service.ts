@@ -13,18 +13,18 @@ export class ClassroomService {
   }
 
   public getClassrooms(): Observable<Classroom[]> {
-    let url = "http://localhost:8080/sali";
+    let url = 'http://localhost:8080/sali';
     return this.http.get<Classroom[]>(url);
   }
 
   public getClassroomHistory(id): Observable<Booking[]> {
-    let url = "http://localhost:8080/istoric";
+    let url = 'http://localhost:8080/istoric';
     let params = new HttpParams().set("id", id);
     return this.http.get<Booking[]>(url, {params: params});
   }
 
   public bookClassroom(id_sala, id_user, start, finish, motiv): Observable<any> {
-    let url = "http://localhost:8080/new_booking";
+    let url = 'http://localhost:8080/new_booking';
     let params = new HttpParams().set("id_sala", id_sala).set("id_user", id_user).set("start", start).set("finish", finish).set("motiv", motiv);
     return this.http.post<any>(url, {}, {params: params});
   }
