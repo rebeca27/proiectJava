@@ -35,9 +35,11 @@ export class DashboardComponent implements OnInit {
     this.currentUser = this.authService.getUser();
     this.authService.getFaculty(this.currentUser.id_facultate).subscribe(data => {
       this.currentFaculty = data || [];
+      console.log(this.currentFaculty[0]);
     });
 
-    this.currentFaculty = this.authService.getFaculty(this.currentUser.id_facultate);
+    // this.currentFaculty = this.authService.getFaculty(this.currentUser.id_facultate);
+
   }
 
   public openHistoryModal(classroomName, id): void {

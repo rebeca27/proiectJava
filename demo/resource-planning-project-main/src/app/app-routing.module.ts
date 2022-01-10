@@ -4,12 +4,17 @@ import {AuthenticationComponent} from './components/sigin/authentication.compone
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {AuthGuard} from './core/guards/auth.guard';
 import {RegisterComponent} from './components/register/register.component';
+import {IndexComponent} from './components/index/index.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/register', pathMatch: 'full' },
+  { path: '', redirectTo: '/index', pathMatch: 'full' },
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'index',
+    component: IndexComponent,
   },
   {
     path: 'login',

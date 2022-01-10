@@ -3,13 +3,10 @@ package com.example.demo.controllers;
 import com.example.demo.dao.RezervareDao;
 import com.example.demo.dao.SalaDao;
 import com.example.demo.dao.UserDao;
-import com.example.demo.dao.FacultateDao;
-import com.example.demo.models.Facultate;
 import com.example.demo.models.Rezervare;
 import com.example.demo.models.Sala;
 import com.example.demo.models.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
@@ -26,8 +23,6 @@ public class MainController {
     private UserDao userDao;
     @Autowired
     private RezervareDao rezervareDao;
-    @Autowired
-    private FacultateDao facultateDao;
 
     @GetMapping("/login")
     public List<User> getAllUsers() {

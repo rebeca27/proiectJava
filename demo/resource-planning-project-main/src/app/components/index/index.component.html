@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row" style="height: 90vh;">
+    <div class="col-6" style="display: flex; align-items: center;">
+      <div class="auth-wrapper">
+        <form  class="form-signin">
+          <div class="welcome-text">
+
+            <div matBadge="15" matBadgeColor="warn" class="welcome-text-title">
+              Welcome,
+              <br>
+              please Login if you already have an account or register.
+            </div>
+          </div>
+
+          <button (click)="registerPage()"
+    form              class="btn btn-block btn-light" type="submit">Register
+          </button>
+
+          <button (click)="loginPage()"
+                  form              class="btn btn-block btn-light" type="submit">Login
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="col-6" style="display: flex; align-items: center;">
+      <div>
+        <img class=" login-img" src="/assets/Login-rafiki.png">
+      </div>
+    </div>
+  </div>
+</div>

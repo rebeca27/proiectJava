@@ -20,10 +20,12 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {ViewHistoryModalComponent} from './components/view-history-modal/view-history-modal.component';
 import {BookClassroomModalComponent} from './components/book-classroom-modal/book-classroom-modal.component';
 import {RegisterComponent} from './components/register/register.component';
+import {IndexComponent} from './components/index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    IndexComponent,
     RegisterComponent,
     AuthenticationComponent,
     DashboardComponent,
