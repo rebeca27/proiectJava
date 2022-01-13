@@ -1,0 +1,6 @@
+id,nume,prenume,permisiune,mail,parola,id_facultate
+1,Rebeca,Oprea,0,rebeca.oprea@test.com,t,1
+2,Ciripan,Rodica,1,ciripan.rodica@test.com,t,2
+3,Eric,Oprea,1,eric.oprea@test.com,t,1
+4,Andreea,Ionescu,0,andreea.ionescu@test.com,t,1
+5,Andreea,Popescu,0,a.p@test.com,t,2

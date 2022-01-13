@@ -6,7 +6,7 @@ import com.example.demo.dao.UserDao;
 import com.example.demo.models.Rezervare;
 import com.example.demo.models.Sala;
 import com.example.demo.models.User;
-import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
@@ -42,7 +42,6 @@ public class MainController {
     }
 
 
-
     @RequestMapping("/istoric")
     public List<Rezervare> getRoomHistory(@RequestParam int id) {
         rezervareDao.updateSalaStatus();
@@ -61,6 +60,12 @@ public class MainController {
     public void registerUser(@RequestParam String nume,@RequestParam String prenume, @RequestParam boolean permisiune, @RequestParam String mail, @RequestParam String parola,@RequestParam int id_facultate) {
         User user = new User(nume, prenume, permisiune, mail, parola,id_facultate);
         userDao.updateUser(user);
+    }
+
+    @PostMapping("/new_classroom")
+    public void registerClassroom(@RequestParam String nume,@RequestParam String descriere, @RequestParam boolean stare) {
+        Sala sala = new Sala(nume, descriere, stare);
+        salaDao.updateClassroom(sala);
     }
 
 }

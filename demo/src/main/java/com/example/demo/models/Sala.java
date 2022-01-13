@@ -19,9 +19,6 @@ public class Sala {
     public String nume;
 
     @NotNull
-    public String facultate;
-
-    @NotNull
     public String descriere;
 
     @NotNull
@@ -46,9 +43,7 @@ public class Sala {
     }
 
 
-    public String getNume() {
-        return nume;
-    }
+    public String getNume() { return nume; }
 
     public void setNume(String nume) {
         this.nume = nume;
@@ -62,7 +57,7 @@ public class Sala {
         this.descriere = descriere;
     }
 
-    public boolean isStare() {
+    public boolean getStare() {
         return stare;
     }
 
@@ -73,6 +68,8 @@ public class Sala {
     public int getId() {
         return id;
     }
+
+   // public int setId() this.id = id;}
 
     @Override
     public String toString() {

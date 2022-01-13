@@ -11,4 +11,11 @@ import java.util.List;
 @Repository
 @Transactional
 public class InscriereDao {
+    @PersistenceContext
+    public EntityManager entityManager;
+
+    public List<Inscriere> getAll() {
+
+        return entityManager.createQuery("from inscriere").getResultList();
+    }
 }

@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
       console.log(this.currentFaculty[0]);
     });
 
-    // this.currentFaculty = this.authService.getFaculty(this.currentUser.id_facultate);
+    this.currentFaculty = this.authService.getFaculty(this.currentUser.id_facultate);
 
   }
 

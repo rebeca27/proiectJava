@@ -3,11 +3,7 @@ package com.example.demo.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.*;
 
-/**
- * Represents an User for this web application.
- */
 @Entity
 @Table(name = "Facultate")
 public class Facultate {
@@ -17,13 +13,6 @@ public class Facultate {
 
     @NotNull
     public String nume;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "attendee",
-            joinColumns = @JoinColumn(name = "id_facultate"),
-            inverseJoinColumns = @JoinColumn(name = "id_user"))
-    private Set<User> faculties;
 
     public Facultate() {
     }
@@ -42,11 +31,6 @@ public class Facultate {
         this.nume = nume;
     }
 
-    public Set<User> getFaculties() { return faculties; }
-
-    public void addFaculty(User faculty) { faculties.add(faculty); }
-
-    public void removeFaculty(User faculty) { faculties.remove(faculty); }
 
     @Override
     public String toString() {

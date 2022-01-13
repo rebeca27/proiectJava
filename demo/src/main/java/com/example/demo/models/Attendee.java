@@ -2,24 +2,22 @@ package com.example.demo.models;
 
 import javax.validation.constraints.NotNull;
 
-public class Inscriere {
-
-    @NotNull
-    public int id_sala;
-
+public class Attendee {
     @NotNull
     public int id_user;
 
+    @NotNull
+    public int id_facultate;
 
-    public Inscriere(){
+    public Attendee(){
     }
 
-    public int getId_sala() {
-        return id_sala;
+    public int getId_facultate() {
+        return id_facultate;
     }
 
-    public void setId_sala(int id_sala) {
-        this.id_sala = id_sala;
+    public void setId_facultate(int id_facultate) {
+        this.id_facultate = id_facultate;
     }
 
     public int getId_user() {
@@ -33,7 +31,7 @@ public class Inscriere {
     @Override
     public String toString() {
         return "Attendee{" +
-                "id_sala=" + id_sala +
+                "id_facultate=" + id_facultate +
                 ", id_user='" + id_user + '\'' +
                 '}';
     }

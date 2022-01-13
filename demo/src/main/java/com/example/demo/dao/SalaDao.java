@@ -33,4 +33,13 @@ public class SalaDao {
     public void unbookIt(int id) {
         entityManager.createQuery("update Sala set stare = FALSE where id = :id").setParameter("id", id).executeUpdate();
     }
+
+    @Transactional
+    public void updateClassroom(Sala sala){
+        entityManager.createNativeQuery("INSERT INTO Sala (nume, descriere, stare) VALUES (?,?,?)")
+                .setParameter(1, sala.getNume())
+                .setParameter(2, sala.getDescriere() )
+                .setParameter(3, sala.getStare())
+                .executeUpdate();
+    }
 }
