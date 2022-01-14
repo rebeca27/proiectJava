@@ -10,5 +10,6 @@ import java.util.Optional;
 @Repository
 public interface FacultateRepository extends JpaRepository<Facultate,Integer> {
 
-//Optional<Facultate> findAllByUser(int id);
+Optional<Facultate> getById(int id);
+
 }

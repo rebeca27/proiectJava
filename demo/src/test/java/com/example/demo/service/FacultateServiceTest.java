@@ -31,31 +31,31 @@ class FacultateServiceTest {
         assertThat(result).containsExactly(facultate);
     }
 
-
-
-    @Test
-    void testGetFaculty() {
-        Facultate facultate = new Facultate("Litere");
-
-        facultate = facultateRepository.save(facultate);
-
-        Facultate resultFacultate = facultateRepository.getById(facultate.getId());
-
-
-        User user = new User();
-        user.setNume("Rauch");
-        user.setPrenume("Rebecca");
-        user.setPermisiune(false);
-        user.setMail("rebecca.rauch@test.com");
-        user.setParola("t");
-        user.setId_facultate(1);
-
-        user = userRepository.save(user);
-
-        User resultUser = userRepository.getById(user.getId_facultate());
-
-        assertThat(resultUser).equals(resultFacultate);
-
-    }
+//
+//
+//    @Test
+//    void testGetFaculty() {
+//        Facultate facultate = new Facultate("Litere");
+//
+//        facultate = facultateRepository.save(facultate);
+//
+//        Facultate resultFacultate = facultateRepository.getById(facultate.getId());
+//
+//
+//        User user = new User();
+//        user.setNume("Rauch");
+//        user.setPrenume("Rebecca");
+//        user.setPermisiune(false);
+//        user.setMail("rebecca.rauch@test.com");
+//        user.setParola("t");
+//        user.setId_facultate(1);
+//
+//        user = userRepository.save(user);
+//
+//        User resultUser = userRepository.getById(user.getId_facultate());
+//
+//        assertThat(resultUser).equals(resultFacultate);
+//
+//    }
 }
 
