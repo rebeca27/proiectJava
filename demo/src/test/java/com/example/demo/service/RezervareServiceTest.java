@@ -4,6 +4,7 @@ import com.example.demo.models.Rezervare;
 import com.example.demo.models.Sala;
 import com.example.demo.repository.RezervareRepository;
 import com.example.demo.repository.SalaRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +20,7 @@ class RezervareServiceTest {
     RezervareRepository rezervareRepository;
 
     @Test
+    @DisplayName("Save info rezervare")
     void testSaveRezervare() {
         Timestamp start = Timestamp.valueOf("2022-01-14 01:25:00");
         Timestamp finish = Timestamp.valueOf("2022-01-14 04:25:00");

@@ -2,6 +2,7 @@ package com.example.demo.repository;
 
 import com.example.demo.models.Rezervare;
 import com.example.demo.models.Sala;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +18,7 @@ class RezervareRepositoryTest {
     RezervareRepository rezervareRepository;
 
     @Test
+    @DisplayName("Get info rezervare")
     void testGetAll() {
        Rezervare rezervare = new Rezervare();
         rezervare.setId_user(1);

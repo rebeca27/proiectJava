@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.models.Sala;
 import com.example.demo.repository.SalaRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +17,7 @@ class SalaServiceTest {
     SalaRepository salaRepository;
 
     @Test
+    @DisplayName("Save info sala")
     void testSaveSala() {
         Sala sala = new Sala("EC101", "Electro Computing", false);
 

@@ -37,6 +37,12 @@ public class Facultate {
 
     public Facultate(String nume) { this.nume = nume; }
 
+    public int getId() { return id; }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNume() {
         return nume;
     }
