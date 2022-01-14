@@ -5,28 +5,23 @@
 //import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
 //import org.mockito.InjectMocks;
-//import org.mockito.Mock;
 //import org.mockito.MockitoAnnotations;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.context.SpringBootTest;
 //
-//import javax.persistence.EntityManager;
 //import java.util.Arrays;
 //import java.util.List;
 //
-//import static org.mockito.Mockito.*;
-//
+//@SpringBootTest
 //class UserDaoTest1 {
-//    @Mock
-//    EntityManager entityManager;
-//    @InjectMocks
+//    @Autowired
 //    UserDao userDao;
 //
-//    @BeforeEach
-//    void setUp() {
-//        MockitoAnnotations.initMocks(this);
-//    }
+//
 //
 //    @Test
 //    void testGetAll() {
+//
 //        List<User> result = userDao.getAll();
 //        Assertions.assertEquals(Arrays.<User>asList(new User("nume", "prenume", true, "mail", "parola", 0)), result);
 //    }

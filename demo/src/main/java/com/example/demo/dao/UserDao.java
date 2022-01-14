@@ -1,10 +1,11 @@
 package com.example.demo.dao;
 
 import com.example.demo.models.User;
+import com.example.demo.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -12,8 +13,10 @@ import java.util.List;
 @Transactional
 public class UserDao {
 
-    @PersistenceContext
+    @Autowired
     public EntityManager entityManager;
+    @Autowired
+    public UserRepository userRepository;
 
     public List<User> getAll() {
         return entityManager.createQuery("from User").getResultList();
@@ -67,4 +70,5 @@ public class UserDao {
       return  entityManager.createQuery("select f.nume from User u, Facultate f where u.id_facultate = f.id and u.id = :id")
                 .setParameter("id", id).getResultList();
     }
+
 }

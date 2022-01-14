@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.dao.InscriereDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.939 s <<< FAILURE! - in com.example.demo.dao.InscriereDaoTest
+testGetAll  Time elapsed: 0.926 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.example.demo.dao.InscriereDaoTest.testGetAll(InscriereDaoTest.java:30)
+

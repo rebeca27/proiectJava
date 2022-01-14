@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   public registerUser() {
     this.userService.
     registerUser(

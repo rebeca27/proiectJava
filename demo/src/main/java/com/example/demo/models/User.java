@@ -2,6 +2,7 @@ package com.example.demo.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -103,5 +104,18 @@ public class User {
                 ", parola='" + parola + '\'' +
                 ", id_facultate='" + id_facultate + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && permisiune == user.permisiune && id_facultate == user.id_facultate && nume.equals(user.nume) && prenume.equals(user.prenume) && mail.equals(user.mail) && parola.equals(user.parola);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nume, prenume, permisiune, mail, parola, id_facultate);
     }
 }

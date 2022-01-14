@@ -1,1 +1,3 @@
-com/example/demo/DemoApplicationTests.class
+com\example\demo\dao\UserDaoTest1.class
+com\example\demo\dao\RezervareDaoTest.class
+com\example\demo\dao\InscriereDaoTest.class

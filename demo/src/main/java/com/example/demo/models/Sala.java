@@ -3,6 +3,7 @@ package com.example.demo.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
  * Represents an User for this web application.
@@ -35,6 +36,18 @@ public class Sala {
         this.id = id;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sala sala = (Sala) o;
+        return id == sala.id && stare == sala.stare && nume.equals(sala.nume) && descriere.equals(sala.descriere);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nume, descriere, stare);
+    }
 
     public Sala(String nume, String descriere, boolean stare) {
         this.nume = nume;

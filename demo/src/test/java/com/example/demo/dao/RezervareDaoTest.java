@@ -15,10 +15,7 @@
 //import static org.mockito.Mockito.*;
 //
 //class RezervareDaoTest {
-//    @Mock
-//    EntityManager entityManager;
-//    @Mock
-//    SalaDao salaDao;
+//
 //    @InjectMocks
 //    RezervareDao rezervareDao;
 //

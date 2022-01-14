@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "Rezervare")
@@ -28,6 +29,19 @@ public class Rezervare {
     public Rezervare() {
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rezervare rezervare = (Rezervare) o;
+        return id == rezervare.id && id_sala == rezervare.id_sala && id_user == rezervare.id_user && estimat_rezervare == rezervare.estimat_rezervare && start.equals(rezervare.start) && finish.equals(rezervare.finish) && motiv.equals(rezervare.motiv);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, id_sala, id_user, start, finish, motiv, estimat_rezervare);
+    }
 
     public Rezervare(int id_sala, int id_user, Timestamp start, Timestamp finish, String motiv) {
         this.id_sala = id_sala;
